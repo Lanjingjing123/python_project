@@ -17,7 +17,7 @@ userRealname = applyInfo['userRealname']
 userIdcardNo = applyInfo['userIdcardNo']
 print('%s,%s,%s'%(_id,userRealname,userIdcardNo))
 
-
+str = ''
 # 申请分数 bbgScoreCardResult ,dict_keys(['contentList'])
 if 'bbgScoreCardResult' in jsonObject:
     bbgScoreCardResult = jsonObject['bbgScoreCardResult']
@@ -28,9 +28,12 @@ if 'bbgScoreCardResult' in jsonObject:
         # item  <class 'dict'>
         title = item['title']
         value = item['value']
+
+        str = str + '%s:%s,' % (title, value)
         print(title+':'+value+',',end='')
         pass
     print('')
+    print(str)
     print("结束")
     pass
 
@@ -44,7 +47,7 @@ print(bbgReport)
 CreditDetail = bbgReport['CreditDetail']
 Header = bbgReport['Header']
 Loan = CreditDetail['Loan']
-print(type('Loan'))
+# print(type('Loan'))
 for item in Loan:
     Type = ''
     PaymentCyc = ''
@@ -57,8 +60,8 @@ for item in Loan:
     Balance = ''
 
     # item dict_keys(['ContractInfo', 'CurrAccountInfo'])
-    print(type(item))
-    print(item.keys())
+    # print(type(item))
+    # print(item.keys())
     ContractInfo = item['ContractInfo']
     if 'ContractInfo' in item:
         ContractInfo = item['ContractInfo']
@@ -77,5 +80,5 @@ for item in Loan:
         ScheduledPaymentAmount = CurrAccountInfo['ScheduledPaymentAmount']
         Balance = CurrAccountInfo['Balance']
         pass
-    print('%s,%s,%s,%s,%s,%s,%s,%s,%s'%(Type, PaymentCyc, GuaranteeType, CreditLimitAmount,
+    print('%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s'%(_id, userRealname, userIdcardNo,str,Type, PaymentCyc, GuaranteeType, CreditLimitAmount,
                                         OpenDate, EndDate, PaymentRating, ScheduledPaymentAmount, Balance))

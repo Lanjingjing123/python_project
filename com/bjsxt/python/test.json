@@ -1,0 +1,31 @@
+{
+	"applyInfo" : {
+		"_id" : "61",
+		"userRealname" : "吴",
+		"userIdcardNo" : "26"
+	},
+	"bbgReport" : {
+		"CreditDetail" : {
+			"Loan" : [{
+				"ContractInfo" : {
+					"Type" : "个人住房贷款",
+					"PaymentCyc" : "360",
+					"GuaranteeType" : "组合(不含保证)担保",
+					"CreditLimitAmount" : "762000",
+					"OpenDate" : "2018-07-10",
+					"EndDate" : "2048-07-10",
+					"PaymentRating" : "按月归还"
+				},
+				"CurrAccountInfo" : {
+					"ScheduledPaymentAmount" : "4510",
+					"Balance" : "756486"
+				}
+			}]
+		},
+		"Header" : {
+			"MessageHeader" : {
+				"ReportCreateTime" : "2019-03-26 22:01:35"
+			}
+		}
+	}
+}
